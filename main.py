@@ -1,7 +1,20 @@
-from stats import get_num_words, get_char_stats, sort_dict 
+import sys
+from stats import (
+    get_num_words, 
+    get_char_stats, 
+    sort_dict,
+)
 
 def main():
-    book_path = "books/frankenstein.txt"
+    if len(sys.argv) == 2:
+        print("bookot starting...")
+    else:
+        print("Don't be stupit! :")
+        print("Usage: python3 main.py <path_to_book>")
+        sys.exit(1)
+
+    book_path = f"{sys.argv[1]}"
+    #bookpath = "books/frankenstein.txt"
     text = get_book_text(book_path)
     num_words = get_num_words(text)
     char_stats = get_char_stats(text)
