@@ -28,12 +28,12 @@ def sort_dict(dict):
     temp_dict = {}
 
     for item in dict:
-        temp_dict = {}
+        #temp_dict = {}
         #print(f"item: {item}")
         #print(f"value:{dict[item]}")
-        temp_dict["char"] = item
-        temp_dict["num"] = dict[item]
-        sorted_dict.append(temp_dict)
+        #temp_dict["char"] = item
+        #temp_dict["num"] = dict[item]
+        sorted_dict.append({"char": item, "num": dict[item]})
     sorted_dict.sort(reverse=True, key=sort_on)
     return sorted_dict
     
